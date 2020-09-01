@@ -1,0 +1,16 @@
+ [{
+         "id": "01",
+         "name": "Joy Dey",
+         "url": "https://joydey.in"
+     },
+     {
+         "id": "02",
+         "name": "News Portal",
+         "url": "https://newsshaan.com"
+     },
+     {
+         "id": "03",
+         "name": "Software World",
+         "url": "https://softwareworld.co.in"
+     }
+ ]

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@500;700&display=swap');
+.webList {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px -2px rgba(32, 32, 32, .25);
+    position: relative;
+    transition: box-shadow .3s ease;
+}
+
+.webList:hover {
+    box-shadow: 0 4px 15px -5px rgba(32, 32, 32, .25);
+}
+
+.webList:hover .webIndex {
+    color: #ff696a;
+    transition: all .3s linear;
+}
+
+.webList .webIndex {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    pointer-events: none;
+}
+
+.webList .webName {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #424242;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.webList a {
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    color: #0072ff;
+    font-weight: 500;
+}
+
+.webList a::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #0072ff;
+    height: 2px;
+    bottom: -2px;
+    transition: all .25s ease;
+}
+
+.webList a:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <script>
+        // let url = 'json/websitelist.json';
+
+        function weblist(url, styleurl) {
+            fetch(url)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    appendData(data);
+                    console.log('Data Fetched Successfully');
+                })
+                .catch((error) => {
+                    console.error('Encountered an Error: ' + error);
+                });
+
+            function appendData(data) {
+                let styles = document.querySelector('head');
+                let stylesheet_link = document.createElement("link");
+                stylesheet_link.rel = 'stylesheet';
+                stylesheet_link.href = styleurl;
+                styles.appendChild(stylesheet_link);
+                for (let i = 0; i < data.length; i++) {
+                    let div = document.createElement("div");
+                    div.setAttribute('class', 'webList');
+                    // 
+                    let webIndex = document.createElement('span');
+                    webIndex.setAttribute('class', 'webIndex');
+                    webIndex.innerHTML = `${data[i].id}`;
+                    // 
+                    let webName = document.createElement("p");
+                    webName.setAttribute('class', 'webName');
+                    webName.innerHTML = `${data[i].name}`;
+                    // 
+                    let url = document.createElement("a");
+                    url.setAttribute('href', `${data[i].url}`);
+                    url.setAttribute('title', `Have a look at ${data[i].name}'s Website`);
+                    url.innerHTML = `Visit Website`;
+                    document.body.append(div);
+                    div.appendChild(webIndex);
+                    div.appendChild(webName);
+                    div.appendChild(url);
+
+                }
+            }
+        }
+
+        weblist('json/websitelist.json', 'assets/styles.css');
+    </script>
+</body>
+
+</html>
